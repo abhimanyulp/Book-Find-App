@@ -150,7 +150,7 @@ function App() {
 
       <div id='main'>
         {
-          filtered ? (
+          filtered.length > 0 ? (
             filtered.map((book) => (
               <div key={book._id}>
                 <h3>{book.title}</h3>
