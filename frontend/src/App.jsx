@@ -24,7 +24,7 @@ function App() {
 
   const fetch = async () => {
     try {
-      const res = await axios.get("https://rose-crazy-lion.cyclic.app/books/getall")
+      const res = await axios.get("https://book-find-app.onrender.com/books/getall")
       console.log(res.data.data)
       setBooks(res.data.data)
     } catch (error) {
@@ -35,7 +35,7 @@ function App() {
   const addBook = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("https://rose-crazy-lion.cyclic.app/books/post", {
+      await axios.post("https://book-find-app.onrender.com/books/post", {
         title,
         author,
         genre,
@@ -57,7 +57,7 @@ function App() {
 
   const deleteBook = async (id) => {
     try {
-      await axios.delete(`https://rose-crazy-lion.cyclic.app/books/delete/${id}`)
+      await axios.delete(`https://book-find-app.onrender.com/books/delete/${id}`)
       fetch()
     } catch (error) {
       console.log(error)
@@ -74,7 +74,7 @@ function App() {
         setFiltered(books)
       } else {
 
-        const res = await axios.get(`https://rose-crazy-lion.cyclic.app/books/genre/${genre}`)
+        const res = await axios.get(`https://book-find-app.onrender.com/books/genre/${genre}`)
         console.log(res.data.data)
         setFiltered(res.data.data)
       }
